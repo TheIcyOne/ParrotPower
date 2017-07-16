@@ -1,0 +1,23 @@
+{
+    "type": "forge:ore_shaped",
+    "pattern": [
+        "MAM",
+        "ASA",
+        "MAM"
+    ],
+    "key": {
+		"A": {
+            "item": "#DYE"
+        },
+        "M": {
+            "item": "#WOOL"
+        },
+        "S": {
+            "item": "minecraft:redstone_block"
+        }
+    },
+    "result": {
+        "item": "parrotpower:aves_alternator",
+        "data": 0
+    }
+}
