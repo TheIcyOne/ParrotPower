@@ -1,0 +1,7 @@
+{
+	"variants":{
+		"normal": {"model": "parrotpower:aves_alternator"},
+		"active=0": {"model": "parrotpower:aves_alternator"},
+		"active=1": {"model": "parrotpower:aves_alternator_active"}
+	}
+}
