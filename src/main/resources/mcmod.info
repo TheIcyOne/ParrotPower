@@ -1,0 +1,16 @@
+[
+{
+  "modid": "parrotpower",
+  "name": "Parrot Power",
+  "description": "Perfect Parrot Power Production.",
+  "version": "${version}",
+  "mcversion": "${mcversion}",
+  "url": "",
+  "updateUrl": "",
+  "authorList": ["The_Icy_One"],
+  "credits": "",
+  "logoFile": "logo.png",
+  "screenshots": [],
+  "dependencies": []
+}
+]
