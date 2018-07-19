@@ -69,3 +69,6 @@ build
 # other
 eclipse
 run
+
+/libs/*
+/src/main/java/thaumcraft

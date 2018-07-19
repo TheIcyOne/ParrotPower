@@ -1,0 +1,7 @@
+{
+	"variants":{
+		"normal": {"model": "parrotpower:volitant_visinator"},
+		"active=0": {"model": "parrotpower:volitant_visinator"},
+		"active=1": {"model": "parrotpower:volitant_visinator_active"}
+	}
+}

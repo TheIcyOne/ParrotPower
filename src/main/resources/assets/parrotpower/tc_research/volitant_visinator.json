@@ -1,0 +1,27 @@
+{
+    "entries" :[
+        {
+        "key": "visinator",
+        "name": "research.visinator.title",          
+        "icons": [ "parrotpower:volitant_visinator;1;0" ], 
+        "category": "ARTIFICE",   
+        "parents": [ "~ARCANELAMP", "DIOPTRA" ], 
+        "location": [ -4,2 ],
+        "reward_knowledge": [ "OBSERVATION;AUROMANCY;5" ],         
+        "stages": [
+                {
+                    "text": "research.visinator.text.stage.1",  
+                    "required_item":["minecraft:feather;5;0"],
+					"required_item":["minecraft:jukebox;1;0"],
+                    "required_craft":["parrotpower:aves_alternator"],
+                    "required_knowledge":["THEORY;AUROMANCY;2","OBSERVATION;AUROMANCY;1", "THEORY:ARTIFICE"]
+                },
+                {
+                    "text": "research.visinator.text.stage.2",
+                    "recipes": ["parrotpower:visinator"],
+                    "warp": 25
+                }
+            ]
+        }
+    ]
+}
