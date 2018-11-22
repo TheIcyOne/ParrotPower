@@ -54,7 +54,7 @@ public class TileEntityAvesAlternator extends TileEntity implements IEnergyStora
             TileEntity te = world.getTileEntity(new BlockPos(fd.getFrontOffsetX() + this.pos.getX(), fd.getFrontOffsetY() + this.pos.getY(), fd.getFrontOffsetZ() + this.pos.getZ()));
             if (te instanceof IEnergyStorage) {
                     IEnergyStorage es = (IEnergyStorage) te;
-                        energy -= es.receiveEnergy(energy, true);
+                        energy -= es.receiveEnergy(energy, false);
             }
 		}
 		getWorld().profiler.endSection();
