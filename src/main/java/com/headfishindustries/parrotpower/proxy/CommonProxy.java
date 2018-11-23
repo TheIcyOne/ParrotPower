@@ -11,6 +11,7 @@ import net.minecraftforge.fml.common.Loader;
 import thaumcraft.api.ThaumcraftApi;
 import thaumcraft.api.aspects.Aspect;
 import thaumcraft.api.aspects.AspectList;
+import thaumcraft.api.crafting.CrucibleRecipe;
 import thaumcraft.api.crafting.ShapedArcaneRecipe;
 import thaumcraft.api.items.ItemsTC;
 
@@ -23,21 +24,10 @@ public class CommonProxy {
 	}
 	
 	public void init(){
-		if (Loader.isModLoaded("thaumcraft")) {					
-			ThaumcraftApi.addArcaneCraftingRecipe(new ResourceLocation(ParrotPower.MODID, "visinator"), 
-					new ShapedArcaneRecipe(
-							new ResourceLocation(""),
-							"visinator",
-							50,
-							new AspectList().add(Aspect.AIR, 1).add(Aspect.ORDER, 1).add(Aspect.ENTROPY, 1),
-							new ItemStack(BlockDefs.volitantVisinator), 
-							new Object[] {
-									'G', new ItemStack(Items.GOLD_INGOT),
-									'S', new ItemStack(ItemsTC.amber),
-									'A', new ItemStack(BlockDefs.avesAlternator)}
-					));			
-			
-			ThaumcraftApi.registerResearchLocation(new ResourceLocation(ParrotPower.MODID, "tc_research/volitant_visinator"));
+		if (Loader.isModLoaded("thaumcraft")) {		
+			ThaumcraftApi.addCrucibleRecipe(new ResourceLocation(ParrotPower.MODID, "visinator"),
+					new CrucibleRecipe("visinator", new ItemStack(BlockDefs.volitantVisinator), new ItemStack(BlockDefs.avesAlternator), new AspectList().add(Aspect.AIR, 5).add(Aspect.ORDER, 2).add(Aspect.ENTROPY, 5).add(Aspect.BEAST, 7)));
+					ThaumcraftApi.registerResearchLocation(new ResourceLocation(ParrotPower.MODID, "tc_research/volitant_visinator"));
 		
 		}
 		
