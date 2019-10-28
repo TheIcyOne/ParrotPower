@@ -1,5 +1,6 @@
 package com.headfishindustries.parrotpower.block;
 
+import com.headfishindustries.parrotpower.ParrotPower;
 import com.headfishindustries.parrotpower.defs.BlockDefs;
 import com.headfishindustries.parrotpower.tile.TileEntityAvesAlternator;
 
@@ -32,7 +33,7 @@ public class BlockAvesAlternator extends Block implements ITileEntityProvider{
 		this.setHardness(1.5f);
 		this.setResistance(10.0f);
 		this.setHarvestLevel("pickaxe", 1);
-		this.setRegistryName("aves_alternator");
+		this.setRegistryName(ParrotPower.MODID, "aves_alternator");
 	}
 	
 	public void onBlockPlacedBy(World worldIn, BlockPos pos, IBlockState state, EntityLivingBase placer, ItemStack stack)
