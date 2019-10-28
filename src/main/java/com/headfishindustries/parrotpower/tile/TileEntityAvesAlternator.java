@@ -42,7 +42,9 @@ public class TileEntityAvesAlternator extends TileEntity implements IEnergyStora
 		if (((world.getBlockState(pos.up()) == Blocks.JUKEBOX.getDefaultState().withProperty(BlockJukebox.HAS_RECORD, true)))){
 		List<EntityParrot> parrots = world.getEntitiesWithinAABB(EntityParrot.class, new AxisAlignedBB(pos.add(-range, -range + 1, -range), pos.add(range, range + 1, range)));
 			for (EntityParrot parrot : parrots){
-				parrot.setPartying(pos.up(), true);
+				if (world.isRemote) {
+					parrot.setPartying(pos.up(), true);
+				}
 				powerGen+= 1;
 			}
 		}
@@ -52,9 +54,9 @@ public class TileEntityAvesAlternator extends TileEntity implements IEnergyStora
 		
 		for (EnumFacing fd : EnumFacing.VALUES) {
             TileEntity te = world.getTileEntity(new BlockPos(fd.getFrontOffsetX() + this.pos.getX(), fd.getFrontOffsetY() + this.pos.getY(), fd.getFrontOffsetZ() + this.pos.getZ()));
-            if (te instanceof IEnergyStorage) {
-                    IEnergyStorage es = (IEnergyStorage) te;
-                        energy -= es.receiveEnergy(energy, false);
+            if (te == null) continue;
+            if (te.hasCapability(CapabilityEnergy.ENERGY, fd.getOpposite())) {
+                energy -= te.getCapability(CapabilityEnergy.ENERGY, fd.getOpposite()).receiveEnergy(energy, false);
             }
 		}
 		getWorld().profiler.endSection();

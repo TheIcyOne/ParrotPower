@@ -41,7 +41,9 @@ public class TileEntityVolitantVisinator extends TileEntity implements ITickable
 		if (((world.getBlockState(pos.up()) == Blocks.JUKEBOX.getDefaultState().withProperty(BlockJukebox.HAS_RECORD, true)))){
 		List<EntityParrot> parrots = world.getEntitiesWithinAABB(EntityParrot.class, new AxisAlignedBB(pos.add(-range, -range + 1, -range), pos.add(range, range + 1, range)));
 			for (EntityParrot parrot : parrots){
-				parrot.setPartying(pos.up(), true);
+				if (world.isRemote) {
+					parrot.setPartying(pos.up(), true);
+				}
 				powerGen+= 1;
 			}
 		}
